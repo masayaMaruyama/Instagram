@@ -1,11 +1,10 @@
-//
 //  TabBarController.swift
 //  Instagram
 //
 //  Created by jobs steve on 2022/01/22.
-//
 
 import UIKit
+import Firebase
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
@@ -17,6 +16,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.barTintColor = UIColor(red: 0.96, green: 0.91, blue: 0, alpha: 1)
         //UITabBarControllerDelegateプロトコルのメソッドをこのクラスで処理
         self.delegate = self
+    }
+    
+    //ログイン状態を確認
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // currentUserがnilならログインしていない
+        if Auth.auth().currentUser == nil {
+            //ログインしない時の処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
@@ -32,13 +42,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             return true
         }
     }
-    
-    
-    
-    
-    
-    
-    
     
     /*
     // MARK: - Navigation
