@@ -2,11 +2,9 @@
 //  PostViewController.swift
 //  Instagram
 //  Created by jobs steve on 2022/01/20.
-
 import UIKit
 import Firebase
 import SVProgressHUD
-
 class PostViewController: UIViewController {
     //ImSeViConからモーダルで表示される際にUIImageを受け取ることができるように定義
     var image: UIImage!
@@ -25,12 +23,11 @@ class PostViewController: UIViewController {
         //どの投稿に対応する画像か紐付けるために、 .child(postRef.documentID + ".jpg")を指定して
         //投稿データの documentIDを画像のファイル名に利用しています。
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + ".jpg")
-        //HUDで投稿処理中の表示を開始
-        SVProgressHUD.show()
+        SVProgressHUD.show()//HUDで投稿処理中の表示を開始
         //Storageに画像をアップロードする
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
-        //putData(_:metadata:completion:)メソッドを使用して画像をStorageにアップロード
+        //putData(_:meta〜)メソッドで画像をStorageにアップロード
         imageRef.putData(imageData!, metadata: metadata) { (metadate, error) in
             if error != nil {//画像のアップロード失敗
                 print(error!)
@@ -47,7 +44,7 @@ class PostViewController: UIViewController {
                 "date": FieldValue.serverTimestamp()
             ] as [String : Any]
             postRef.setData(postDic)
-            //HUDで投稿完了を表示する
+            //HUDで投稿完了を表示
             SVProgressHUD.showSuccess(withStatus: "投稿しました")
             //投稿処理が完了したので先頭画面に戻る
             UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -57,7 +54,6 @@ class PostViewController: UIViewController {
     @IBAction func handleCancelButton(_ sender: Any) {//キャンセルButton
         self.dismiss(animated: true, completion: nil)//加工画面へ戻る
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image//受け取った画像をImageViewに設定する
