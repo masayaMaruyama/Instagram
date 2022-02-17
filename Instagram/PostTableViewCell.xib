@@ -54,9 +54,6 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egH-Oe-4EO">
                         <rect key="frame" x="130" y="607" width="97" height="36"/>
                         <state key="normal" title="Button" image="fukidashi"/>
-                        <connections>
-                            <action selector="PostComment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wMd-ES-aWs"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFR-zD-ZdQ">
                         <rect key="frame" x="30" y="781" width="554" height="21"/>
@@ -94,6 +91,7 @@
                 <outlet property="dateLabel" destination="f1z-gI-ZUz" id="bOG-pu-0lx"/>
                 <outlet property="likeButton" destination="uVr-Pr-wa1" id="KvV-yb-2xC"/>
                 <outlet property="likeLabel" destination="SCi-lh-OFM" id="F7M-uX-zjb"/>
+                <outlet property="postComment" destination="egH-Oe-4EO" id="VJL-2v-sog"/>
                 <outlet property="postImageView" destination="wH1-nT-ddW" id="nbB-B9-DTz"/>
             </connections>
             <point key="canvasLocation" x="153.62318840579712" y="300"/>

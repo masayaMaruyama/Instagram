@@ -1,7 +1,6 @@
 //
 //  PostTableViewCell.swift
 //  Instagram
-//
 //  Created by jobs steve on 2022/02/06.
 //02.06セルの表示処理を実装する 直前まで
 
@@ -15,20 +14,12 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var postComment: UIButton!//2/17add
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    @IBAction func PostComment(_ sender: Any) {
-        
-        
-        
-    //PostCommentViewへの画面遷移
-    }
-    
-
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -36,7 +27,7 @@ class PostTableViewCell: UITableViewCell {
     //PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
         //画像の表示
-         //Cloud Storageから画像をダウンロードしている間、ダウンロード中であることを示すインジケーターを表示
+        //Cloud Storageから画像をダウンロードしている間、ダウンロード中であることを示すインジケーターを表示
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
         postImageView.sd_setImage(with: imageRef)
@@ -69,7 +60,5 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
-        
     }
-    
 }

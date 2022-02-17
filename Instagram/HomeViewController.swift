@@ -67,8 +67,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        cell.postComment.addTarget(self, action: #selector(commentHandleButton(_:forEvent:)), for: .touchUpInside)//2/17add
         return cell
     }
+    
+    @objc func commentHandleButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: Commentボタンがタップされました。")
+        //タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        
+        let postViewController = storyboard!.instantiateViewController(withIdentifier: "PostComment")
+        //モーダル画面遷移を行う
+        present(postViewController, animated: true)
+        
+        
+        
+        //配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+    }
+    
     
     //セル内のボタンがタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
@@ -78,10 +98,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
-        
+
         //配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
-        
+
         //likesを更新する
         if let myid = Auth.auth().currentUser?.uid {
             //更新データを作成する
