@@ -1,9 +1,6 @@
-//
 //  HomeViewController.swift
 //  Instagram
-//
 //  Created by jobs steve on 2022/01/20.
-//
 
 import UIKit
 import Firebase
@@ -71,23 +68,32 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let postCommentViewController:PostCommentViewController = segue.destination as! PostCommentViewController
+ //   }
+    
+    
     @objc func commentHandleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: Commentボタンがタップされました。")
         //タップされたセルのインデックスを求める
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
-        
-        
-        let postViewController = storyboard!.instantiateViewController(withIdentifier: "PostComment")
-        //モーダル画面遷移を行う
-        present(postViewController, animated: true)
-        
-        
-        
         //配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
+           
+        
+        //モーダル画面遷移を行う
+        let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "PostComment") as! PostCommentViewController
+        postViewController.postDataId = postData.id
+        
+        postViewController.postDataCaption = postData.caption!
+        
+        present(postViewController, animated: true)
     }
+    
+
+    
     
     
     //セル内のボタンがタップされた時に呼ばれるメソッド
@@ -98,10 +104,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
-
+        
         //配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
-
+        
         //likesを更新する
         if let myid = Auth.auth().currentUser?.uid {
             //更新データを作成する
@@ -118,14 +124,4 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             postRef.updateData(["likes": updateValue])
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

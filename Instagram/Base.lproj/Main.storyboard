@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqy-bm-uyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="23"/>
+            <point key="canvasLocation" x="754" y="23"/>
         </scene>
         <!--Post Comment View Controller-->
         <scene sceneID="Gbi-Ca-rA1">
@@ -59,6 +59,21 @@
                                     <action selector="commentPostButton:" destination="UZh-zb-VmT" eventType="touchUpInside" id="fhk-xm-2do"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キャプション" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXJ-Zx-WeZ">
+                                <rect key="frame" x="155" y="324" width="104" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ffq-HB-7u6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BsV-QJ-PIc">
+                                <rect key="frame" x="0.0" y="359" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BsV-QJ-PIc" secondAttribute="height" multiplier="1:1" id="zg0-iY-IYR"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HfW-XL-ZRz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,18 +82,25 @@
                             <constraint firstItem="Vbf-q1-ekx" firstAttribute="centerX" secondItem="wQQ-Vu-mcB" secondAttribute="centerX" id="7Vy-Td-5CU"/>
                             <constraint firstItem="Ati-jk-H2O" firstAttribute="top" secondItem="L53-85-a8A" secondAttribute="bottom" constant="20" id="9gY-e6-aqO"/>
                             <constraint firstItem="Vbf-q1-ekx" firstAttribute="top" secondItem="Ati-jk-H2O" secondAttribute="bottom" constant="10" id="IBk-3Q-ixQ"/>
+                            <constraint firstItem="BsV-QJ-PIc" firstAttribute="top" secondItem="bXJ-Zx-WeZ" secondAttribute="bottom" constant="10" id="Jtb-bF-EgS"/>
+                            <constraint firstItem="bXJ-Zx-WeZ" firstAttribute="top" secondItem="Vbf-q1-ekx" secondAttribute="bottom" constant="20" id="RpF-8h-iHE"/>
                             <constraint firstItem="L53-85-a8A" firstAttribute="leading" secondItem="HfW-XL-ZRz" secondAttribute="leading" constant="10" id="SGf-ro-8Zn"/>
                             <constraint firstItem="Ati-jk-H2O" firstAttribute="centerX" secondItem="wQQ-Vu-mcB" secondAttribute="centerX" id="Tci-3W-Kgk"/>
+                            <constraint firstItem="bXJ-Zx-WeZ" firstAttribute="centerX" secondItem="wQQ-Vu-mcB" secondAttribute="centerX" id="dGm-gq-gc7"/>
+                            <constraint firstItem="HfW-XL-ZRz" firstAttribute="trailing" secondItem="BsV-QJ-PIc" secondAttribute="trailing" id="vke-is-mBy"/>
                             <constraint firstItem="L53-85-a8A" firstAttribute="top" secondItem="HfW-XL-ZRz" secondAttribute="top" constant="30" id="zQE-Ve-YId"/>
+                            <constraint firstItem="BsV-QJ-PIc" firstAttribute="leading" secondItem="HfW-XL-ZRz" secondAttribute="leading" id="zh7-pD-5ef"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captionLabel" destination="bXJ-Zx-WeZ" id="Efi-l5-lHR"/>
                         <outlet property="commentTextField" destination="L53-85-a8A" id="YkG-eo-BM0"/>
+                        <outlet property="postImageView" destination="BsV-QJ-PIc" id="3IQ-BT-a29"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucu-ZH-ewk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1514" y="23"/>
+            <point key="canvasLocation" x="-810" y="1413"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="oTS-nT-cx3">
@@ -109,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vC-70-AXK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1499" y="749"/>
+            <point key="canvasLocation" x="-810" y="749"/>
         </scene>
         <!--投稿-->
         <scene sceneID="KLF-o5-5bl">
@@ -165,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSh-Jq-9L0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-799" y="749"/>
+            <point key="canvasLocation" x="-65" y="749"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="pM2-1m-NVE">
@@ -307,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDf-yH-eGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="749"/>
+            <point key="canvasLocation" x="-65" y="1413"/>
         </scene>
         <!--設定-->
         <scene sceneID="wjY-1L-mDF">
@@ -364,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxg-6m-A1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="749"/>
+            <point key="canvasLocation" x="754" y="749"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xUq-zk-2mE">

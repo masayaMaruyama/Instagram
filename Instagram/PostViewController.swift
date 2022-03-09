@@ -58,12 +58,4 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = image//受け取った画像をImageViewに設定する
     }
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

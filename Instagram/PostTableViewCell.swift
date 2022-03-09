@@ -6,6 +6,7 @@
 
 import UIKit
 import FirebaseStorageUI
+import Firebase//3/7add
 
 class PostTableViewCell: UITableViewCell {
     
@@ -15,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var postComment: UIButton!//2/17add
+    @IBOutlet weak var commentLabel: UILabel!//2/17add
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +36,15 @@ class PostTableViewCell: UITableViewCell {
         
         //キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+        
+        //コメントの表示
+        let commentArray = postData.comment
+        var comments = ""
+        for i in commentArray {
+            comments += "\(i)\n"
+         }
+        commentLabel.text = comments
+        
         
         //日時の表示
         self.dateLabel.text = ""

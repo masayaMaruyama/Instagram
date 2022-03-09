@@ -55,8 +55,8 @@
                         <rect key="frame" x="130" y="607" width="97" height="36"/>
                         <state key="normal" title="Button" image="fukidashi"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFR-zD-ZdQ">
-                        <rect key="frame" x="30" y="781" width="554" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="コメント0件" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFR-zD-ZdQ">
+                        <rect key="frame" x="30" y="685.5" width="554" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -69,9 +69,9 @@
                     <constraint firstAttribute="trailingMargin" secondItem="wH1-nT-ddW" secondAttribute="trailing" id="CqC-EY-47d"/>
                     <constraint firstItem="IwK-ug-xWc" firstAttribute="top" secondItem="uVr-Pr-wa1" secondAttribute="bottom" constant="10" id="EgU-YO-7rq"/>
                     <constraint firstItem="f1z-gI-ZUz" firstAttribute="centerY" secondItem="uVr-Pr-wa1" secondAttribute="centerY" id="ILB-rB-WNq"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="XFR-zD-ZdQ" secondAttribute="bottom" constant="10" id="KRx-Ji-Yxx"/>
                     <constraint firstItem="egH-Oe-4EO" firstAttribute="leading" secondItem="SCi-lh-OFM" secondAttribute="trailing" constant="10" id="PQW-qJ-bnw"/>
                     <constraint firstItem="SCi-lh-OFM" firstAttribute="centerY" secondItem="uVr-Pr-wa1" secondAttribute="centerY" id="Z7c-bu-wMY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XFR-zD-ZdQ" secondAttribute="bottom" constant="20" id="ZYX-68-yHJ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IwK-ug-xWc" secondAttribute="trailing" constant="10" id="ahb-OA-VWl"/>
                     <constraint firstItem="egH-Oe-4EO" firstAttribute="centerY" secondItem="SCi-lh-OFM" secondAttribute="centerY" id="bMO-hc-JCX"/>
                     <constraint firstItem="SCi-lh-OFM" firstAttribute="leading" secondItem="uVr-Pr-wa1" secondAttribute="trailing" constant="10" id="eZ9-I7-ROP"/>
@@ -88,6 +88,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="IwK-ug-xWc" id="9cR-rK-xTr"/>
+                <outlet property="commentLabel" destination="XFR-zD-ZdQ" id="ti0-iG-96K"/>
                 <outlet property="dateLabel" destination="f1z-gI-ZUz" id="bOG-pu-0lx"/>
                 <outlet property="likeButton" destination="uVr-Pr-wa1" id="KvV-yb-2xC"/>
                 <outlet property="likeLabel" destination="SCi-lh-OFM" id="F7M-uX-zjb"/>
